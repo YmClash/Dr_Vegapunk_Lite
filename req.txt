@@ -4,3 +4,12 @@ discord.py[voice]
 openai
 logging
 python-dotenv
+
+on linux
+On Linux environments, installing voice requires getting the following dependencies:
+
+libffi
+libnacl
+python3-dev
+
+For a Debian-based system, the following command will get these dependencies:
