@@ -1,0 +1,6 @@
+discord
+discord.py
+discord.py[voice]
+openai
+logging
+python-dotenv
