@@ -16,7 +16,7 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 bot = discord.Client(intents=intents)
-model = "gpt-4"
+model = "gpt-4-1106-preview	"
 model_Img = "dall-e-3"
 
 # on cree les deux fonction asynchrone pour  1: generative  2: Generation d'image
@@ -24,15 +24,15 @@ async def demande_gpt(prompt) :
     response = openai.chat.completions.create(
         model=model,
         messages=[
-            {"role" : "system", "content" : "Je suis le Dr Vegapunk"},
+            {"role" : "assistant", "content" : "Je suis le Dr Vegapunk"},
             {"role" : "user", "content" : prompt}
         ],
         # quelque parametre pour  mieux controle  le bot
         max_tokens=500,
         temperature=0.75,
-        top_p=1.0,
+        top_p=0.75,
         frequency_penalty=0.0,
-        presence_penalty=0.6
+        presence_penalty=0.6,
     )
     message = response.choices[0].message.content.strip()
     return message
